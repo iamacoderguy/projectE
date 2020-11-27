@@ -8,7 +8,11 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "code:check": "tsc --project tsconfig.json && eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "code:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "clean": "rimraf node_modules && yarn cache clean --force",
+    "clean:all": "rimraf yarn.lock && yarn clean",
+    "reset": "react-native start --reset-cache"
   },
   "dependencies": {
     "react": "16.13.1",
@@ -29,6 +33,7 @@
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-test-renderer": "16.13.1",
+    "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   },
   "jest": {
